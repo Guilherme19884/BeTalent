@@ -1,0 +1,23 @@
+{
+  "name": "betalent",
+  "version": "1.0.0",
+  "description": "Teste solicitado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilherme19884/BeTalent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guilherme19884/BeTalent/issues"
+  },
+  "homepage": "https://github.com/Guilherme19884/BeTalent#readme",
+  "dependencies": {
+    "@adonisjs/core": "^6.19.1"
+  }
+}

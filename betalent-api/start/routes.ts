@@ -1,16 +1,6 @@
-/*
-|--------------------------------------------------------------------------
-| Routes file
-|--------------------------------------------------------------------------
-|
-| The routes file is used for defining the HTTP routes.
-|
-*/
+import Route from '@adonisjs/core/services/router'
+import AddClientController from '#controllers/AddClientController'
+import GetAllClientsController from '#controllers/GetAllClientController'
 
-import router from '@adonisjs/core/services/router'
-
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+Route.post('/clients', [AddClientController, 'handle'])
+Route.get('/clients', [GetAllClientsController, 'handle'])
