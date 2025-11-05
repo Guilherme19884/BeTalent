@@ -7,8 +7,24 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
+      table
+        .integer('transaction_id')
+        .unsigned()
+        .references('id')
+        .inTable('transactions')
+        .onDelete('CASCADE')
+
+      table
+        .integer('product_id')
+        .unsigned()
+        .references('id')
+        .inTable('products')
+        .onDelete('CASCADE')
+
+      table.integer('quantity').notNullable()
+
+      table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
+      table.timestamp('updated_at', { useTz: true }).defaultTo(this.now())
     })
   }
 
